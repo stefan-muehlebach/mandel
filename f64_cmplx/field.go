@@ -22,10 +22,10 @@ import (
     "image/png"
     "log"
     "math"
-	"math/cmplx"
+    "math/cmplx"
     "os"
     "strings"
-    . "mju.net/mandel"
+    . "github.com/stefan-muehlebach/mandel"
 )
 
 const (

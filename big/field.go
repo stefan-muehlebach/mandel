@@ -26,7 +26,7 @@ import (
     "os"
     "strings"
 
-    . "mju.net/mandel"
+    . "github.com/stefan-muehlebach/mandel"
 )
 
 const (
