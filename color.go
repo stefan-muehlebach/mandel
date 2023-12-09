@@ -1,7 +1,7 @@
 package mandel
 
 import (
-    _ "image/color"
+    _ "github.com/stefan-muehlebach/gg/color"
 )
 
 type RGBA struct {
