@@ -1,3 +1,5 @@
+// Dieses Package habe ich erstellt, um mit Go Bildserien der Mandelbrotmenge
+// zu erstellen.
 package mandel
 
 import (
