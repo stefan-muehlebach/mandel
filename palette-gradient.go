@@ -31,6 +31,7 @@ func NewGradientPalette() *GradientPalette {
     for i := Red; i < NumBaseColors; i++ {
         p.pointList[i] = list.New()
     }
+    p.intFunc = LinInterpFunc
     p.intFunc = CubicInterpFunc
     p.rexp = gradientPalRegexp
     return p
