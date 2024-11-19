@@ -130,7 +130,7 @@ func LinInterpFunc(t float64) float64 {
 
 // Die kubische Interpolation, welche weichere Uebergaenge realisiert.
 func CubicInterpFunc(t float64) float64 {
-    return -2.0*t*t*t + 3.0*t*t
+    return 3.0*t*t - 2.0*t*t*t
 }
 
 // Retourniert einen Slice mit den Namen aller verfuegbaren Paletten.
