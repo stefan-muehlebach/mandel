@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+    echo "usage: $(basename $0) <dir> <avi-file>" >&2
+    exit 1
+fi
+
+DIR=$1
+OUT_FILE=$2
+
+if [ ! -d $DIR ]; then
+    echo "$DIR: no such directory" >&2
+    exit 1
+fi
+
+# ffmpeg -y -f image2 -i $DIR/img%05d.png -f mp4 -q:v 0 -vcodec mpeg4 $OUT_FILE
+
+# ffmpeg -f image2 -y -i $DIR/img%05d.png -vcodec libx264 -profile:v high444 -refs 16 -crf 0 -preset ultrafast -s 320x240 $OUT_FILE
+
+# ffmpeg -f image2 -i $DIR/img%05d.png -vcodec ffv1 -b 2000k $OUT_FILE
+
+# ffmpeg -f image2 -i $DIR/img%05d.png -vcodec mpeg4 -b 800k $OUT_FILE
+
+ffmpeg -f image2 -framerate 25 -i $DIR/img%05d.png -s 640x480 \
+        -vcodec libx264 -crf 25 -pix_fmt yuv420p $OUT_FILE
+
