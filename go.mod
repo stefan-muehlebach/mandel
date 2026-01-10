@@ -1,6 +1,6 @@
 module github.com/stefan-muehlebach/mandel
 
-go 1.23.3
+go 1.25.5
 
 require github.com/stefan-muehlebach/gg v1.3.4
 
