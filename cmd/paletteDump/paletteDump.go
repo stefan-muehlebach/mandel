@@ -9,7 +9,7 @@ import (
 	"os"
 
 	"github.com/stefan-muehlebach/gg"
-	"github.com/stefan-muehlebach/gg/color"
+	"github.com/stefan-muehlebach/gg/colors"
 	"github.com/stefan-muehlebach/gg/fonts"
 	"github.com/stefan-muehlebach/mandel"
 )
@@ -41,10 +41,10 @@ func main() {
 	img := image.NewRGBA(image.Rect(0, 0, imgWidth, imgHeight))
 	gc := gg.NewContextForRGBA(img)
 
-	gc.SetFillColor(color.WhiteSmoke)
+	gc.SetFillColor(colors.WhiteSmoke)
 	gc.Clear()
 	gc.SetFontFace(fonts.NewFace(fonts.GoRegular, 18.0))
-	gc.SetStrokeColor(color.Black)
+	gc.SetStrokeColor(colors.Black)
 	for i, palName := range palNameList {
 		col := i / numRows
 		row := i % numRows
@@ -76,7 +76,7 @@ func main() {
 				img.Set(int(x0+Padding)+x, int(y0+TextHeight+Padding)+y, color)
 			}
 		}
-		gc.SetStrokeColor(color.DarkSlateGrey)
+		gc.SetStrokeColor(colors.DarkSlateGrey)
 		gc.SetStrokeWidth(3.0)
 		gc.DrawRectangle(x0+Padding, y0+TextHeight+Padding, ColorBarWidth, ColorBarHeight)
 		gc.Stroke()
